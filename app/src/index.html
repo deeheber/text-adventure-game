@@ -4,6 +4,15 @@
     <meta charset="utf-8">
   </head>
   <body ng-controller="main">
-    <p>{{hello}}</p>
+      <div ng-controller="start">
+        <p>{{intro}}</p>
+        <label><input ng-change="select('desk')" ng-model="room" type="radio" value="desk">{{desk}}</label>
+        <label><input ng-change="select('bossDesk')" ng-model="room" type="radio" value="bossDesk">{{bossDesk}}</label>
+        <label><input ng-change="select('breakroom')" ng-model="room" type="radio" value="breakroom">{{breakroom}}</label>
+      </div>
+      <div ng-controller="desk"></div>
+      <div ng-controller="bossDesk"></div>
+      <div ng-controller="breakroom"></div>
+      <div ng-controller="end"></div>
   </body>
 </html>
