@@ -6,13 +6,14 @@
   <body ng-controller="main">
       <div ng-controller="start">
         <p>{{intro}}</p>
-        <label><input ng-change="select('desk')" ng-model="room" type="radio" value="desk">{{desk}}</label>
-        <label><input ng-change="select('bossDesk')" ng-model="room" type="radio" value="bossDesk">{{bossDesk}}</label>
-        <label><input ng-change="select('breakroom')" ng-model="room" type="radio" value="breakroom">{{breakroom}}</label>
+        <p>{{room}}</p>
+        <button ng-click="room = 'desk'">Go to your desk</button>
+        <button ng-click="room = 'bossDesk'">Go to Boss's desk</button>
+        <button ng-click="room = 'breakroom'">Go to the breakroom</button>
+        <div ng-show="room === 'desk'" ng-controller="desk">Desk Div</div>
+        <div ng-show="room === 'bossDesk'" ng-controller="bossDesk">Boss Div</div>
+        <div ng-show="room === 'breakroom'" ng-controller="breakroom">Breakroom Div</div>
+        <div ng-show="room=== 'end'" ng-controller="end">End Div</div>
       </div>
-      <div ng-controller="desk"></div>
-      <div ng-controller="bossDesk"></div>
-      <div ng-controller="breakroom"></div>
-      <div ng-controller="end"></div>
   </body>
 </html>

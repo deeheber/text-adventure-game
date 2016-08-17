@@ -5,20 +5,10 @@ const app = angular.module('myApp', []);
 app.controller('main', function($scope) {
   $scope.room = '';
   $scope.cake = false;
-  $scope.desk = `Go to your desk.`;
-  $scope.bossDesk = `Go to your Boss's desk`;
-  $scope.breakroom = `Go to the breakroom`;
-  $scope.select = function(value) {
-    $scope.room = value;
-  };
-  
-
-  
 });
+
 app.controller('start', function($scope) {
   $scope.intro = `It is 4:20pm on a Friday, and your top pal has an extra ticket to the Pabst Music Festival on the Waterfront. You stuck at work until 6pm, but your pal is coming to pick you up at five. You must navigate through the perils of Coropate America to reach the safe harbor that is Pabst Music Festival. Your move!`;
-
-
 
 });
 
