@@ -50,13 +50,18 @@
 	
 	var _angular2 = _interopRequireDefault(_angular);
 	
+	var _app = __webpack_require__(3);
+	
+	var _app2 = _interopRequireDefault(_app);
+	
+	var _app3 = __webpack_require__(10);
+	
+	var _app4 = _interopRequireDefault(_app3);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var app = _angular2.default.module('myApp', []);
-	
-	app.controller('main', function ($scope) {
-	  $scope.hello = 'Hello World!';
-	});
+	document.body.innerHTML = _app4.default;
+	_angular2.default.bootstrap(document, [_app2.default]);
 
 /***/ },
 /* 1 */
@@ -16760,6 +16765,158 @@
 	if(window.console){console.log('WARNING: Tried to load angular more than once.');}return;}//try to bind to jquery now so that one can write jqLite(document).ready()
 	//but we will rebind on bootstrap again.
 	bindJQuery();publishExternalAPI(angular);angular.module("ngLocale",[],["$provide",function($provide){var PLURAL_CATEGORY={ZERO:"zero",ONE:"one",TWO:"two",FEW:"few",MANY:"many",OTHER:"other"};function getDecimals(n){n=n+'';var i=n.indexOf('.');return i==-1?0:n.length-i-1;}function getVF(n,opt_precision){var v=opt_precision;if(undefined===v){v=Math.min(getDecimals(n),3);}var base=Math.pow(10,v);var f=(n*base|0)%base;return{v:v,f:f};}$provide.value("$locale",{"DATETIME_FORMATS":{"AMPMS":["AM","PM"],"DAY":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"ERANAMES":["Before Christ","Anno Domini"],"ERAS":["BC","AD"],"FIRSTDAYOFWEEK":6,"MONTH":["January","February","March","April","May","June","July","August","September","October","November","December"],"SHORTDAY":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"SHORTMONTH":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"STANDALONEMONTH":["January","February","March","April","May","June","July","August","September","October","November","December"],"WEEKENDRANGE":[5,6],"fullDate":"EEEE, MMMM d, y","longDate":"MMMM d, y","medium":"MMM d, y h:mm:ss a","mediumDate":"MMM d, y","mediumTime":"h:mm:ss a","short":"M/d/yy h:mm a","shortDate":"M/d/yy","shortTime":"h:mm a"},"NUMBER_FORMATS":{"CURRENCY_SYM":"$","DECIMAL_SEP":".","GROUP_SEP":",","PATTERNS":[{"gSize":3,"lgSize":3,"maxFrac":3,"minFrac":0,"minInt":1,"negPre":"-","negSuf":"","posPre":"","posSuf":""},{"gSize":3,"lgSize":3,"maxFrac":2,"minFrac":2,"minInt":1,"negPre":'-¤',"negSuf":"","posPre":'¤',"posSuf":""}]},"id":"en-us","localeID":"en_US","pluralCat":function pluralCat(n,opt_precision){var i=n|0;var vf=getVF(n,opt_precision);if(i==1&&vf.v==0){return PLURAL_CATEGORY.ONE;}return PLURAL_CATEGORY.OTHER;}});}]);jqLite(window.document).ready(function(){angularInit(window.document,bootstrap);});})(window);!window.angular.$$csp().noInlineStyle&&window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(1);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _controllers = __webpack_require__(4);
+	
+	var _controllers2 = _interopRequireDefault(_controllers);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _angular2.default.module('myApp', [_controllers2.default]).name;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _angular = __webpack_require__(1);
+	
+	var _angular2 = _interopRequireDefault(_angular);
+	
+	var _desk = __webpack_require__(5);
+	
+	var _desk2 = _interopRequireDefault(_desk);
+	
+	var _bossDesk = __webpack_require__(6);
+	
+	var _bossDesk2 = _interopRequireDefault(_bossDesk);
+	
+	var _breakroom = __webpack_require__(7);
+	
+	var _breakroom2 = _interopRequireDefault(_breakroom);
+	
+	var _end = __webpack_require__(8);
+	
+	var _end2 = _interopRequireDefault(_end);
+	
+	var _main = __webpack_require__(9);
+	
+	var _main2 = _interopRequireDefault(_main);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var _module = _angular2.default.module('controllers', []);
+	
+	_module.controller('desk', _desk2.default);
+	_module.controller('bossDesk', _bossDesk2.default);
+	_module.controller('breakroom', _breakroom2.default);
+	_module.controller('main', _main2.default);
+	_module.controller('end', _end2.default);
+	
+	exports.default = _module.name;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = desk;
+	function desk($scope) {
+	  $scope.deskText = 'This is the text for desk';
+	}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = bossDesk;
+	function bossDesk($scope) {
+	  $scope.bossDeskText = 'This is the text for boss desk text';
+	}
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = breakroom;
+	function breakroom($scope) {
+	  $scope.breakroomText = 'This is the text for break room text';
+	}
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = end;
+	function end($scope) {
+	  $scope.endText = 'This is the text for the end room. #SWEETFREEDOM';
+	}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = main;
+	function main($scope) {
+	  $scope.room = '';
+	  $scope.cake = false;
+	  $scope.intro = 'It is 4:20pm on a Friday, and your top pal has an extra ticket to the Pabst Music Festival on the Waterfront. You stuck at work until 6pm, but your pal is coming to pick you up at five. You must navigate through the perils of Coropate America to reach the safe harbor that is Pabst Music Festival. Your move!';
+	  $scope.getCake = function () {
+	    $scope.cake = true;
+	  };
+	  $scope.winning = function () {
+	    $scope.room = 'end';
+	  };
+	}
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = "<div ng-controller=\"main\">\n  <p ng-show=\"room === ''\">{{intro}}</p>\n  <div ng-show=\"room === 'desk'\" ng-controller=\"desk\">{{deskText}}</div>\n  <div ng-show=\"room === 'bossDesk'\" ng-controller=\"bossDesk\">\n    <p>{{bossDeskText}}</p>\n    <button ng-show=\"cake\" ng-click=\"winning()\"> Tempt with Cake</button>\n  </div>\n  <div ng-show=\"room === 'breakroom'\" ng-controller=\"breakroom\">\n    <p>{{breakroomText}}</p>\n    <button ng-hide=\"cake\" ng-click=\"getCake()\">Pick up Kathy from Accounting's birfday cake</button>\n  </div>\n  <div ng-show=\"room === 'end'\" ng-controller=\"end\">\n    <p>{{endText}}</p>\n  </div>\n  <button ng-hide=\"room === 'desk' || room === 'end'\" ng-click=\"room = 'desk'\">Go to your desk</button>\n  <button ng-hide=\"room === 'bossDesk' || room === 'end'\" ng-click=\"room = 'bossDesk'\">Go to Boss's desk</button>\n  <button ng-hide=\"room === 'breakroom' || room === 'end'\" ng-click=\"room = 'breakroom'\">Go to the breakroom</button>\n</div>";
 
 /***/ }
 /******/ ]);
