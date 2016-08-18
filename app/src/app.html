@@ -1,13 +1,24 @@
 <div ng-controller="main">
-  <p ng-show="room === ''">{{intro}}</p>
-  <div ng-show="room === 'desk'" ng-controller="desk">{{deskText}}</div>
+  <div ng-show="room === ''">
+    <h1>{{heading}}</h1>
+    <p>{{intro}}</p>
+  </div>
+  <div ng-show="room === 'desk'" ng-controller="desk">
+    <h1>{{heading}}</h1>
+    <h3>Location: {{location}}</h3>
+    <p>{{deskText}}</p>
+  </div>
   <div ng-show="room === 'bossDesk'" ng-controller="bossDesk">
+    <h1>{{heading}}</h1>
+    <h3>Location: {{location}}</h3>
     <p>{{bossDeskText}}</p>
     <button ng-show="cake" ng-click="winning()"> Tempt with Cake</button>
   </div>
   <div ng-show="room === 'breakroom'" ng-controller="breakroom">
+    <h1>{{heading}}</h1>
+    <h3>Location: {{location}}</h3>
     <p>{{breakroomText}}</p>
-    <button ng-hide="cake" ng-click="getCake()">Pick up Kathy from Accounting's birfday cake</button>
+    <button ng-hide="cake" ng-click="getCake()">Snag Creed's Cake</button>
   </div>
   <div ng-show="room === 'end'" ng-controller="end">
     <p>{{endText}}</p>
