@@ -1,5 +1,5 @@
-TEXT ADVENTURE GAME
+# TEXT ADVENTURE GAME
 
+## Authors: Danielle Heberling and Arielle Foldoe
 
-
-Authors: Danielle Heberling and Arielle Foldoe
+## Directions to run
